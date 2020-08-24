@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1598293249 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp1/trabajo-practico-uno/main.c
+	<stdio.h>
+	<stdlib.h>
+
