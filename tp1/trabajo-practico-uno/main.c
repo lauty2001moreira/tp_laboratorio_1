@@ -1,26 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "calculadora.h"
+#include "get.h"
+
+
 #define wait_Time 1
 
-///fijate hasta que numero te permite el long int en la factorizacion.
-//void calcularOperaciones(float x , float y);
-float sumar( float x , float y);
-float restar( float x , float y);
-float dividir( float x , float y);
-double multiplicar( float x , float y);
-int factorizar( int x );
 int mostrar_Menu(int opcion, float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingresado, int flag_Numero_Dos_Ingresado);
-void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float divicion, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A,int flag_validar_numero_entero_B);
-int validar_Numero_Entero(float numero);
-
+void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float division, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A,int flag_validar_numero_entero_B);
 int main()
 {
     int op;
     float suma;
     float resta;
     double multiplicacion;
-    float divicion;
+    float division;
     long long int factorial_A;
     long long int factorial_B;
     float numero_Uno;
@@ -42,16 +37,15 @@ int main()
         switch(op)
         {
             case 1:
-                printf("Ingresar 1er operando: ");
-                scanf("%f",&numero_Uno);
+                numero_Uno = get_float("Ingresar 1er operando:");
                 flag_Numero_Uno_Ingresado = 1;
 
                 system("clear");
                 break;
 
             case 2:
-                printf("Ingresar 2do operando: ");
-                scanf("%f",&numero_Dos);
+
+                numero_Dos = get_float("Ingresar 2do operando: ");
                 flag_Numero_Dos_Ingresado = 1;
 
                 system("clear");
@@ -64,7 +58,7 @@ int main()
 
                     suma = sumar( numero_Uno , numero_Dos );
                     resta = restar( numero_Uno , numero_Dos );
-                    divicion = dividir( numero_Uno , numero_Dos );
+                    division = dividir( numero_Uno , numero_Dos );
                     multiplicacion = multiplicar( numero_Uno , numero_Dos );
 
                     flag_validar_numero_entero_A = validar_Numero_Entero(numero_Uno);
@@ -73,10 +67,9 @@ int main()
                         factorial_A = factorizar( numero_Uno);
                     }
 
-                    flag_validar_numero_entero_B = validar_Numero_Entero(numero_Dos);
-                    if(flag_validar_numero_entero_B == 1)
-                    {
-                        factorial_B = factorizar( numero_Dos );
+                    factorial_B = factorizar(numero_Dos);
+                    if(factorial_B !=-1 ){
+                        flag_validar_numero_entero_B = validar_Numero_Entero(numero_Dos);
                     }
 
                     flag_Operaciones_Calculadas = 1;
@@ -103,7 +96,7 @@ int main()
                 }
                 break;
             case 4:
-                mostrar_operaciones(numero_Uno , numero_Dos, suma , resta , divicion , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
+                mostrar_operaciones(numero_Uno , numero_Dos, suma , resta , division , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
                 break;
             case 5:
                 system("clear");
@@ -121,54 +114,8 @@ int main()
 
  }
 
-float sumar( float x , float y){
-    float suma;
-    suma = x + y;
-    return suma;
-}
 
-float restar( float x , float y)
-{
-    float resta;
-    resta = x - y;
-    return resta;
-}
-float dividir( float x , float y)
-{
-    float divicion;
-    divicion = x / y;
-    return divicion ;
-}
 
-double multiplicar( float x , float y)
-{
-    double multiplicacion;
-    multiplicacion = x * y ;
-    return multiplicacion;
-}
-
-int factorizar( int x )
-{
-    long long int factorial;
-    if(x >= 0)
-    {
-        if(x == 0)
-        {
-            factorial = 1;
-        }
-        else{
-            //while( x > 0 )
-            //{
-            factorial  = x * ( factorizar(x - 1 ) );
-            //}
-        }
-    }
-    else
-    {
-       factorial = -1 ;
-    }
-    return factorial;
-}
 int mostrar_Menu(int opcion, float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingresado, int flag_Numero_Dos_Ingresado)
 {
     if(flag_Numero_Uno_Ingresado == 0 && flag_Numero_Dos_Ingresado == 0)
@@ -191,7 +138,7 @@ int mostrar_Menu(int opcion, float numero_Uno, float numero_Dos, int flag_Numero
     return opcion;
 }
 
-void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float divicion, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A, int flag_validar_numero_entero_B)
+void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float division, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A, int flag_validar_numero_entero_B)
 {
     if(flag_Operaciones_Calculadas == 1)
     {
@@ -199,10 +146,10 @@ void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float re
         printf("a) El resultado de %.2f + %.2f es: %.2f\n",numero_Uno,numero_Dos,suma);
         //resta
         printf("b) El resultado de %.2f - %.2f es: %.2f\n",numero_Uno,numero_Dos,resta);
-        //divicion.
+        //division.
         if(numero_Dos!=0)
         {
-            printf("c) El resultado de %.2f / %.2f es: %.2f\n",numero_Uno,numero_Dos,divicion);
+            printf("c) El resultado de %.2f / %.2f es: %.2f\n",numero_Uno,numero_Dos,division);
         }
         else
         {
@@ -246,6 +193,7 @@ void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float re
         }
 
         sleep(4);
+        system("clear");
 
 
     }
@@ -256,19 +204,5 @@ void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float re
         system("clear");
     }
 
-}
-
-int validar_Numero_Entero(float numero)
-{
-    int aux;
-    int flag;//si es 1 es flotante y si es 0 es emtero.
-    flag  = 0;
-    aux = numero;
-    if(numero - aux){
-        flag = 0;
-    }else{
-        flag = 1;
-    }
-    return flag;
 }
 
