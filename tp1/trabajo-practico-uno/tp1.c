@@ -55,6 +55,7 @@ void calculadora(){
                 {
                     printf("Calculando operaciones....\n");
 
+
                     suma = sumar( numero_Uno , numero_Dos );
                     resta = restar( numero_Uno , numero_Dos );
                     division = dividir( numero_Uno , numero_Dos );
@@ -97,7 +98,7 @@ void calculadora(){
             case 4:
                 mostrar_operaciones(numero_Uno , numero_Dos, suma , resta , division , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
                 flag_Operaciones_Calculadas = 0;
-                break;
+                 break;
 
             case 5:
                 system("clear");
