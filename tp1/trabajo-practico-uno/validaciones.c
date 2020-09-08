@@ -2,7 +2,7 @@
 int validar_Numero_Entero(float numero)
 {
     int aux;
-    int flag;//si es 0 es flotante y si es 1 es emtero.
+    int flag;
     flag  = 0;
     aux = numero;
     if(numero - aux){
@@ -16,7 +16,7 @@ int validar_Numero_Entero(float numero)
 int validar_Numero_Flotante(float numero)
 {
     int aux;
-    int flag;//si es 1 es flotante y si es 0 es emtero.
+    int flag;
     flag  = 0;
     aux = numero;
     if(numero - aux){

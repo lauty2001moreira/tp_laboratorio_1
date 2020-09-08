@@ -10,6 +10,7 @@ float get_float(char texto[])
     scanf("%f",&numero);
     return numero;
 }
+
 int get_int(char texto[])
 {
     int numero;

@@ -6,7 +6,7 @@
 #include "get.h"
 #include "menu.h"
 
-#define wait_Time 1
+#define WAIT_TIME 2
 
 void calculadora(){
     int op;
@@ -36,6 +36,8 @@ void calculadora(){
         switch(op)
         {
             case 1:
+
+                printf("----------------------PRIMER NUMERO----------------------\n");
                 numero_Uno = get_float("Ingresar 1er operando:");
                 flag_Numero_Uno_Ingresado = 1;
 
@@ -44,6 +46,7 @@ void calculadora(){
 
             case 2:
 
+                printf("----------------------SEGUNDO NUMERO----------------------\n");
                 numero_Dos = get_float("Ingresar 2do operando: ");
                 flag_Numero_Dos_Ingresado = 1;
 
@@ -51,10 +54,11 @@ void calculadora(){
                 break;
 
             case 3:
+
                 if(flag_Numero_Uno_Ingresado == 1 && flag_Numero_Dos_Ingresado == 1 )
                 {
-                    printf("Calculando operaciones....\n");
 
+                    printf("----------------------CALCULANDO OPERACIONES----------------------\n");
 
                     suma = sumar( numero_Uno , numero_Dos );
                     resta = restar( numero_Uno , numero_Dos );
@@ -73,41 +77,43 @@ void calculadora(){
                     }
 
                     flag_Operaciones_Calculadas = 1;
-                    sleep(wait_Time);
-                    system("clear");
+
                 }
                 else if(flag_Numero_Uno_Ingresado == 0 && flag_Numero_Dos_Ingresado == 1 )
                 {
                     printf("Falta ingresar el primer numero por favor seleccione la opcion uno y ingrese el numero.\n");
-                    sleep(wait_Time);
-                    system("clear");
+
                 }
                 else if(flag_Numero_Uno_Ingresado == 1 && flag_Numero_Dos_Ingresado == 0 )
                 {
                     printf("Falta ingresar el segundo numero por favor seleccione la opcion dos y ingrese el numero.\n");
-                    sleep(wait_Time);
-                    system("clear");
+
                 }
                 else
                 {
                     printf("Por favor ingrese los numeros antes de continuar.\n");
-                    sleep(wait_Time);
-                    system("clear");
                 }
+                    sleep(WAIT_TIME);
+                    system("clear");
+
                 break;
+
             case 4:
+
                 mostrar_operaciones(numero_Uno , numero_Dos, suma , resta , division , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
                 flag_Operaciones_Calculadas = 0;
-                 break;
+                break;
 
             case 5:
+
                 system("clear");
                 printf("Hasta luego...");
                 break;
 
             default:
+
                 printf("Por favor ingrese una opcion valida.\n");
-                sleep(wait_Time);
+                sleep(WAIT_TIME);
                 system("clear");
             }
 
