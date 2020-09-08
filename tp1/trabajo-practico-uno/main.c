@@ -3,7 +3,7 @@
 
 int main(){
 
-    calculadora();
+    Calculadora();
 
     return 0;
 

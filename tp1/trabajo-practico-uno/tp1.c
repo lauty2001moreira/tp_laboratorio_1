@@ -8,7 +8,8 @@
 
 #define WAIT_TIME 2
 
-void calculadora(){
+void Calculadora(){
+
     int op;
     float suma;
     float resta;
@@ -31,14 +32,14 @@ void calculadora(){
 
     do{
 
-        op = mostrar_Menu(numero_Uno,numero_Dos,flag_Numero_Uno_Ingresado,flag_Numero_Dos_Ingresado);
+        op = Mostrar_Menu(numero_Uno,numero_Dos,flag_Numero_Uno_Ingresado,flag_Numero_Dos_Ingresado);
 
         switch(op)
         {
             case 1:
 
                 printf("----------------------PRIMER NUMERO----------------------\n");
-                numero_Uno = get_float("Ingresar 1er operando:");
+                numero_Uno = Get_Float("Ingresar 1er operando:");
                 flag_Numero_Uno_Ingresado = 1;
 
                 system("clear");
@@ -47,7 +48,7 @@ void calculadora(){
             case 2:
 
                 printf("----------------------SEGUNDO NUMERO----------------------\n");
-                numero_Dos = get_float("Ingresar 2do operando: ");
+                numero_Dos = Get_Float("Ingresar 2do operando: ");
                 flag_Numero_Dos_Ingresado = 1;
 
                 system("clear");
@@ -60,18 +61,18 @@ void calculadora(){
 
                     printf("----------------------CALCULANDO OPERACIONES----------------------\n");
 
-                    suma = sumar( numero_Uno , numero_Dos );
-                    resta = restar( numero_Uno , numero_Dos );
-                    division = dividir( numero_Uno , numero_Dos );
-                    multiplicacion = multiplicar( numero_Uno , numero_Dos );
+                    suma = Sumar( numero_Uno , numero_Dos );
+                    resta = Restar( numero_Uno , numero_Dos );
+                    division = Dividir( numero_Uno , numero_Dos );
+                    multiplicacion = Multiplicar( numero_Uno , numero_Dos );
 
                     flag_validar_numero_entero_A = validar_Numero_Entero(numero_Uno);
                     if(flag_validar_numero_entero_A ==1)
                     {
-                        factorial_A = factorizar( numero_Uno);
+                        factorial_A = Factorizar( numero_Uno);
                     }
 
-                    factorial_B = factorizar(numero_Dos);
+                    factorial_B = Factorizar(numero_Dos);
                     if(factorial_B !=-1 ){
                         flag_validar_numero_entero_B = validar_Numero_Entero(numero_Dos);
                     }
@@ -100,7 +101,7 @@ void calculadora(){
 
             case 4:
 
-                mostrar_operaciones(numero_Uno , numero_Dos, suma , resta , division , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
+                Mostrar_Operaciones(numero_Uno , numero_Dos, suma , resta , division , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
                 flag_Operaciones_Calculadas = 0;
                 break;
 

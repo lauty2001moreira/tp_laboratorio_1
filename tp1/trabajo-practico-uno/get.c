@@ -3,7 +3,7 @@
 
 
 
-float get_float(char texto[])
+float Get_Float(char texto[])
 {
     float numero;
     printf(texto);
@@ -11,7 +11,7 @@ float get_float(char texto[])
     return numero;
 }
 
-int get_int(char texto[])
+int Get_Int(char texto[])
 {
     int numero;
     printf(texto);

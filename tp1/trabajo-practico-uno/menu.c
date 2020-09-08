@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define WAIT_TIME 2
 
-int mostrar_Menu( float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingresado, int flag_Numero_Dos_Ingresado)
+int Mostrar_Menu( float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingresado, int flag_Numero_Dos_Ingresado)
 {
     int op;
     printf("----------------------MENU----------------------\n");
@@ -26,7 +26,7 @@ int mostrar_Menu( float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingres
     return op;
 }
 
-void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float division, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A, int flag_validar_numero_entero_B)
+void Mostrar_Operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float division, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A, int flag_validar_numero_entero_B)
 {
     system("clear");
 
@@ -45,7 +45,7 @@ void mostrar_operaciones(float numero_Uno,float numero_Dos, float suma ,float re
         }
         else
         {
-            printf("c) No es posible dividir por cero\n");
+            printf("c) No es posible Dividir por cero\n");
         }
 
         printf("d) El resultado de %.2f * %.2f es: %.2f\n",numero_Uno,numero_Dos,multiplicacion);

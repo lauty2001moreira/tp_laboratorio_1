@@ -1,8 +1,8 @@
 
 /**
  *
- *\brief es la llamada de la calculadora
+ *\brief es la llamada de la Calculadora
  *
- */void calculadora();
+ */void Calculadora();
 
 
