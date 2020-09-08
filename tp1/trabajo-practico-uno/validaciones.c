@@ -26,4 +26,3 @@ int validar_Numero_Flotante(float numero)
     }
     return flag;
 }
-
