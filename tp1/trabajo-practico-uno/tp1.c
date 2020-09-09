@@ -15,32 +15,32 @@ void Calculadora(){
     float resta;
     double multiplicacion;
     float division;
-    long long int factorial_A;
-    long long int factorial_B;
-    float numero_Uno;
-    float numero_Dos;
-    int flag_Numero_Uno_Ingresado;
-    int flag_Numero_Dos_Ingresado;
-    int flag_Operaciones_Calculadas;
-    int flag_validar_numero_entero_B;
-    int flag_validar_numero_entero_A;
+    long long int factorialA;
+    long long int factorialB;
+    float numeroUno;
+    float numeroDos;
+    int flagNumeroUnoIngresado;
+    int flagNumeroDosIngresado;
+    int flagOperacionesCalculadas;
+    int flagValidarNumeroEnteroB;
+    int flagValidarNumeroEnteroA;
 
 
-    flag_Numero_Uno_Ingresado = 0;
-    flag_Numero_Dos_Ingresado = 0;
-    flag_Operaciones_Calculadas = 0;
+    flagNumeroUnoIngresado = 0;
+    flagNumeroDosIngresado = 0;
+    flagOperacionesCalculadas = 0;
 
     do{
 
-        op = Mostrar_Menu(numero_Uno,numero_Dos,flag_Numero_Uno_Ingresado,flag_Numero_Dos_Ingresado);
+        op = MostrarMenu(numeroUno,numeroDos,flagNumeroUnoIngresado,flagNumeroDosIngresado);
 
         switch(op)
         {
             case 1:
 
                 printf("----------------------PRIMER NUMERO----------------------\n");
-                numero_Uno = Get_Float("Ingresar 1er operando:");
-                flag_Numero_Uno_Ingresado = 1;
+                numeroUno = GetFloat("Ingresar 1er operando:");
+                flagNumeroUnoIngresado = 1;
 
                 system("clear");
                 break;
@@ -48,44 +48,44 @@ void Calculadora(){
             case 2:
 
                 printf("----------------------SEGUNDO NUMERO----------------------\n");
-                numero_Dos = Get_Float("Ingresar 2do operando: ");
-                flag_Numero_Dos_Ingresado = 1;
+                numeroDos = GetFloat("Ingresar 2do operando: ");
+                flagNumeroDosIngresado = 1;
 
                 system("clear");
                 break;
 
             case 3:
 
-                if(flag_Numero_Uno_Ingresado == 1 && flag_Numero_Dos_Ingresado == 1 )
+                if(flagNumeroUnoIngresado == 1 && flagNumeroDosIngresado == 1 )
                 {
 
                     printf("----------------------CALCULANDO OPERACIONES----------------------\n");
 
-                    suma = Sumar( numero_Uno , numero_Dos );
-                    resta = Restar( numero_Uno , numero_Dos );
-                    division = Dividir( numero_Uno , numero_Dos );
-                    multiplicacion = Multiplicar( numero_Uno , numero_Dos );
+                    suma = Sumar( numeroUno , numeroDos );
+                    resta = Restar( numeroUno , numeroDos );
+                    division = Dividir( numeroUno , numeroDos );
+                    multiplicacion = Multiplicar( numeroUno , numeroDos );
 
-                    flag_validar_numero_entero_A = validar_Numero_Entero(numero_Uno);
-                    if(flag_validar_numero_entero_A ==1)
+                    flagValidarNumeroEnteroA = ValidarNumeroEntero(numeroUno);
+                    if(flagValidarNumeroEnteroA ==1)
                     {
-                        factorial_A = Factorizar( numero_Uno);
+                        factorialA = Factorizar( numeroUno);
                     }
 
-                    factorial_B = Factorizar(numero_Dos);
-                    if(factorial_B !=-1 ){
-                        flag_validar_numero_entero_B = validar_Numero_Entero(numero_Dos);
+                    factorialB = Factorizar(numeroDos);
+                    if(factorialB !=-1 ){
+                        flagValidarNumeroEnteroB = ValidarNumeroEntero(numeroDos);
                     }
 
-                    flag_Operaciones_Calculadas = 1;
+                    flagOperacionesCalculadas = 1;
 
                 }
-                else if(flag_Numero_Uno_Ingresado == 0 && flag_Numero_Dos_Ingresado == 1 )
+                else if(flagNumeroUnoIngresado == 0 && flagNumeroDosIngresado == 1 )
                 {
                     printf("Falta ingresar el primer numero por favor seleccione la opcion uno y ingrese el numero.\n");
 
                 }
-                else if(flag_Numero_Uno_Ingresado == 1 && flag_Numero_Dos_Ingresado == 0 )
+                else if(flagNumeroUnoIngresado == 1 && flagNumeroDosIngresado == 0 )
                 {
                     printf("Falta ingresar el segundo numero por favor seleccione la opcion dos y ingrese el numero.\n");
 
@@ -101,8 +101,8 @@ void Calculadora(){
 
             case 4:
 
-                Mostrar_Operaciones(numero_Uno , numero_Dos, suma , resta , division , multiplicacion, factorial_A , factorial_B , flag_Operaciones_Calculadas,flag_validar_numero_entero_A,flag_validar_numero_entero_B);
-                flag_Operaciones_Calculadas = 0;
+                MostrarOperaciones(numeroUno , numeroDos, suma , resta , division , multiplicacion, factorialA , factorialB , flagOperacionesCalculadas,flagValidarNumeroEnteroA,flagValidarNumeroEnteroB);
+                flagOperacionesCalculadas = 0;
                 break;
 
             case 5:

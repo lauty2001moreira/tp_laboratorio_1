@@ -9,7 +9,7 @@
  * \return int la opcion ingresada por el usuario.
  *
  */
-int Mostrar_Menu( float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingresado, int flag_Numero_Dos_Ingresado);
+int MostrarMenu( float numeroUno, float numeroDos, int , int flagNumeroUnoIngresado);
 
 /** \brief muestra los resultados de las operaciones.
  *
@@ -28,4 +28,4 @@ int Mostrar_Menu( float numero_Uno, float numero_Dos, int flag_Numero_Uno_Ingres
  * \return float el resultado de la divicion.
  *
  */
-void Mostrar_Operaciones(float numero_Uno,float numero_Dos, float suma ,float resta , float division, double multiplicacion, long long int factorial_A,long long int factorial_B,int flag_Operaciones_Calculadas, int flag_validar_numero_entero_A,int flag_validar_numero_entero_B);
+void MostrarOperaciones(float numeroUno,float numeroDos, float suma ,float resta , float division, double multiplicacion, long long int factorialA,long long int factorialB,int flagOperacionesCalculadas, int flagValidarNumeroEnteroA,int flagValidarNumeroEnteroB);

@@ -5,7 +5,7 @@
  * \return float retorna el numero ingresado.
  *
  */
-float Get_Float(char texto[]);
+float GetFloat(char texto[]);
 
 /** \brief pide un numero entero y muestra un mensaje
  *

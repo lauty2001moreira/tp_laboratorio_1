@@ -8,17 +8,17 @@
 
 1599578317 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/calculadora.c
 
-1599578444 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/get.c
+1599670834 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/get.c
 	<stdio.h>
 	<stdlib.h>
 
-1599579129 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/validaciones.c
+1599671588 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/validaciones.c
 
 1599578310 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/calculadora.h
 
-1599578438 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/get.h
+1599670834 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/get.h
 
-1599578579 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/tp1.c
+1599671964 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/tp1.c
 	<stdio.h>
 	<stdlib.h>
 	<unistd.h>
@@ -29,11 +29,11 @@
 
 1599578485 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/tp1.h
 
-1599248450 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/validaciones.h
+1599671586 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/validaciones.h
 
-1599578440 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/menu.c
+1599671997 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/menu.c
 	<stdio.h>
 	<stdlib.h>
 
-1599578439 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/menu.h
+1599671939 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp1/trabajo-practico-uno/menu.h
 

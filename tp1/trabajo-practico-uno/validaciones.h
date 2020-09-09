@@ -5,7 +5,7 @@
  * \return int si 0 es flotante y 1 si es entero.
  *
  */
-int validar_Numero_Entero(float numero);
+int ValidarNumeroEntero(float numero);
 
 /** \brief valida si el mumero es flotante
  *
@@ -13,4 +13,4 @@ int validar_Numero_Entero(float numero);
  * \return int si 1 es flotante y 0 si es entero.
  *
  */
-int validar_Numero_Flotante(float numero);
+int ValidarNumeroFlotante(float numero);

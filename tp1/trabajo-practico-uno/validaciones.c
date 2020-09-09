@@ -1,5 +1,5 @@
 
-int validar_Numero_Entero(float numero)
+int ValidarNumeroEntero(float numero)
 {
     int aux;
     int flag;
@@ -13,7 +13,7 @@ int validar_Numero_Entero(float numero)
     return flag;
 }
 
-int validar_Numero_Flotante(float numero)
+int ValidarNumeroFlotante(float numero)
 {
     int aux;
     int flag;

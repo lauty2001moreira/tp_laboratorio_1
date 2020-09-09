@@ -3,7 +3,7 @@
 
 
 
-float Get_Float(char texto[])
+float GetFloat(char texto[])
 {
     float numero;
     printf(texto);
