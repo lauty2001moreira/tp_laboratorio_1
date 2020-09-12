@@ -28,4 +28,4 @@ int MostrarMenu( float numeroUno, float numeroDos, int , int flagNumeroUnoIngres
  * \return float el resultado de la divicion.
  *
  */
-void MostrarOperaciones(float numeroUno,float numeroDos, float suma ,float resta , float division, double multiplicacion, long long int factorialA,long long int factorialB,int flagOperacionesCalculadas, int flagValidarNumeroEnteroA,int flagValidarNumeroEnteroB);
+void MostrarOperaciones(float numeroUno,float numeroDos, float suma ,float resta , float division, double multiplicacion, long long int factorialA,long long int factorialB,int flagOperacionesCalculadas, int validarNumeroEnteroA,int validarNumeroEnteroB);

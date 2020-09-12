@@ -22,8 +22,8 @@ void Calculadora(){
     int flagNumeroUnoIngresado;
     int flagNumeroDosIngresado;
     int flagOperacionesCalculadas;
-    int flagValidarNumeroEnteroB;
-    int flagValidarNumeroEnteroA;
+    int validarNumeroEnteroB;
+    int validarNumeroEnteroA;
 
 
     flagNumeroUnoIngresado = 0;
@@ -66,15 +66,15 @@ void Calculadora(){
                     division = Dividir( numeroUno , numeroDos );
                     multiplicacion = Multiplicar( numeroUno , numeroDos );
 
-                    flagValidarNumeroEnteroA = ValidarNumeroEntero(numeroUno);
-                    if(flagValidarNumeroEnteroA ==1)
+                    validarNumeroEnteroA = ValidarNumeroEntero(numeroUno);
+                    if(validarNumeroEnteroA ==1)
                     {
                         factorialA = Factorizar( numeroUno);
                     }
 
                     factorialB = Factorizar(numeroDos);
                     if(factorialB !=-1 ){
-                        flagValidarNumeroEnteroB = ValidarNumeroEntero(numeroDos);
+                        validarNumeroEnteroB = ValidarNumeroEntero(numeroDos);
                     }
 
                     flagOperacionesCalculadas = 1;
@@ -101,7 +101,7 @@ void Calculadora(){
 
             case 4:
 
-                MostrarOperaciones(numeroUno , numeroDos, suma , resta , division , multiplicacion, factorialA , factorialB , flagOperacionesCalculadas,flagValidarNumeroEnteroA,flagValidarNumeroEnteroB);
+                MostrarOperaciones(numeroUno , numeroDos, suma , resta , division , multiplicacion, factorialA , factorialB , flagOperacionesCalculadas,validarNumeroEnteroA,validarNumeroEnteroB);
                 flagOperacionesCalculadas = 0;
                 break;
 
