@@ -79,7 +79,7 @@ int ValidarNumero(char string[10]){
 
     for(i = 0; i < len ;i++){
 
-        if (!(isdigit(string[i])))
+        if (!( string[0] == '-' || isdigit(string[i])))
         {
             error = 1;
             break;
@@ -100,7 +100,7 @@ int ValidarNumeroConComa(char string[50]){
 
     for(i = 0; i < len ;i++){
 
-        if (!(isdigit(string[i]) || string[i] == 46 ))
+        if (!( string[0] == '-' || isdigit(string[i]) || string[i] == 46 ))
         {
             error = 1;
             break;

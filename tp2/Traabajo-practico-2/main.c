@@ -1,178 +1,214 @@
 #include "arrayEmployes.h"
-#define T 1000
-int Agree(char *, char* );
+#include "funciones.h"
+#define FALSE 0
+
+#define T 5
 
 int main()
 {
     int op;
-    int opCase2;
+    int opCase4;
     char auxName[51];
     char auxLastName[51];
     float auxSalary;
     int auxSector;
     int auxId;
     int conf;
-    int empleadoAgregado;
-    //char auxString[51];
+
+    int order;
+    int flagEmpleadoIngresado;
     int index;
 
+    Employee sEmployees[T]; //={ {1 , "Lautaro" , "moreira" , 15000 , 1 , FALSE},
+                 /*{2, "German","Gutierrez", 21000, 2 , FALSE},
+                 {3, "Franco","Rolando",32000,2, FALSE},
+                 {4, "Nicolas" , "Birriel" ,42000 , 2 ,FALSE},
+                 {5, "Octavio" , "Costa" , 20420, 1 , FALSE}};*/
 
-    Employee sEmployees[T];
+
+    flagEmpleadoIngresado = 0 ;
 
     if(initEmployees(sEmployees, T) == 0){
 
         do{
 
-            op = GetInt("Ingrese una opcion:\n1.ALTA.\n2.MODIFICAR.\n3.BAJA.\n4.INFORMAR.\n5.Salir.\n", "\nERROR Ingrese solo numeros\nIngrese una opcion:\n1.ALTA.\n2.MODIFICAR.\n3.BAJA.\n4.INFORMAR.\n5.Salir.\n");
+            op =  menu("\n1-ALTA.\n2-MODIFICAR.\n3-BAJA.\n4-INFORMAR.\n5-SALIR.");
 
             switch(op){
 
                 case 1:
 
-                    GetString("\nIngrese el nombre del empleado: ","\nPor favor el nombre solamente debe contener letras: " ,auxName);
-                    GetString("\nIngrese el apellido del empleado: ","\nPor favor el apellido solamente debe contener letras: ",auxLastName);
-                    auxSalary=GetFloat("\nIngrese el salario del empleado: ", "\nIngrese solamente numeros: ");
-                    auxSector=GetInt("\nIngrese el numero del sector del empleado: ", "\nIngrese solamente numeros: ");
+                    printf("\n\n------------ALTA------------\n\n");
+
                     index = findEmptyPlace(sEmployees, T);
-                    auxId = index + 1;
 
-                    addEmployee(sEmployees , T , auxId, auxName, auxLastName, auxSalary , auxSector);
+                    if(index != -1){
 
-                    //printEmployees(sEmployees, T);
+                        GetString("\nIngrese el nombre del empleado: ","\nPor favor el nombre solamente debe contener letras: " ,auxName);
+                        GetString("\nIngrese el apellido del empleado: ","\nPor favor el apellido solamente debe contener letras: ",auxLastName);
+
+                        auxSalary = GetFloat("\nIngrese el salario del empleado: ", "\nError el salario solamente debe contener numeros: ");
+                        auxSector = GetInt("\nIngrese el numero del sector del empleado: ", "\nError el sector solamente debe contener numeros: ");
+
+                        auxId = index + 1;
+
+                        if(addEmployee(sEmployees , T , auxId, auxName, auxLastName, auxSalary , auxSector) != -1)
+                        {
+
+                            flagEmpleadoIngresado = 1;
+                            printf("\nEmpleado ingresado con exito.\n");
+
+                        }else{
+
+                            printf("\nHubo un error al ingresar el empleado.\n");
+
+                        }
+
+                    }else{
+
+                        printf("\nNo hay mas lugar disponible.");
+
+                    }
+
 
                     break;
 
                 case 2:
 
-                    printEmployees(sEmployees, T);
+                    printf("\n\n------------MODIFICAR------------\n\n");
 
-                    auxId = GetInt("\nIngrese el id del empleado a modificar: ","\nEl ID tiene que ser numerico, Reingrese el id: ");
-                    index = findEmployeeById(sEmployees, T, auxId);
-
-                    if(index != -1){
+                    if(flagEmpleadoIngresado != 0){
 
                         do{
 
-                            opCase2 = GetInt("\nQue desea modificar?\n1-Nombre\n2-Apellido\n3-Salario\n4-Sector.\n5-Cancelar\n","\nOpcion ivalida. \nQue desea modificar?\n1-Nombre.\n2-Apellido.\n3-Salario.\n4-Sector.\n5-Cancelar.\n\t");
+                            printEmployees(sEmployees, T);
 
-                            switch(opCase2)
-                            {
+                            auxId = GetInt("\nIngrese el id del empleado a modificar: ","\nEl ID tiene que ser numerico, Reingrese el id: ");
 
-                                case 1:
+                            index = findEmployeeById(sEmployees, T, auxId);
 
-                                    GetString("\nIngrese el nuevo nombre del empleado: ","\nPor favor el nombre solamente debe contener letras: " ,auxName);
-                                    conf = getConfirm("\nEsta seguro que desea modificar el nombre del empleado?. (Y/N) ");
+                            if(index != -1 ){
 
-                                    if( conf == 1){
+                                modifyEmployee(sEmployees , T , index);
 
-                                        strcpy(sEmployees[index].name, auxName);
-                                        printf("\nModificacion exitosa");
+                            }else{
 
-                                    }else{
-                                        printf("\nOperacion cancelada.");
-                                    }
+                                printf("\nError id no encontrado");
+                            }
 
-                                    break;
+                            conf = getConfirm("\nDesea modificar otro empleado? (Y/N):");
 
-                                case 2:
+                        }while(conf == 1);
 
-                                    GetString("\nIngrese el apellido del empleado: ","\nPor favor el apellido solamente debe contener letras: ",auxLastName);
-                                    conf = getConfirm("\nEsta seguro que desea modificar el apellido del empleado?. (Y/N) ");
-
-                                    if( conf == 1){
-
-                                        strcpy(sEmployees[index].name, auxName);
-                                        printf("\nModificacion exitosa");
-
-                                    }else{
-
-                                        printf("\nOperacion cancelada.");
-
-                                    }
-
-
-                                    break;
-                                case 3:
-
-                                    auxSalary = GetFloat("\nIngrese el nuevo salario de la persona: ","\nEl salario debe estar en numeros , Reingrese el salario: ");
-                                    conf = getConfirm("\nEsta seguro que desea modificar el salario del empleado?. (Y/N) ");
-
-                                    if( conf == 1){
-
-                                        sEmployees[index].salary = auxSalary;
-                                        printf("\nModificacion exitosa");
-
-                                    }else{
-
-                                        printf("\nOperacion cancelada.");
-
-                                    }
-
-                                    break;
-
-                                case 4:
-
-                                    auxSector = GetInt("\nIngrese el nuevo sector de la persona: ","\nEl sector debe estar en numeros, Reingrese el sector: ");
-                                    conf = getConfirm("\nEsta seguro que desea modificar el salario del empleado?. (Y/N) ");
-
-                                    if( conf == 1){
-
-                                        sEmployees[index].sector = auxSector;
-                                        printf("\nModificacion exitosa");
-
-                                    }else{
-                                        printf("\nOperacion cancelada.");
-                                    }
-                                        break;
-
-                                case 5:
-
-                                    printf("operacion cancelada");
-
-                                    break;
-
-                                default:
-                                   printf("opcion no valida");
-
-                             }
-
-                        }while(opCase2 != 5);
-
-                        break;
 
                     }else{
 
-                        printf("\nUsuario no encontrado.");
+                        printf("\nPrimero cargue almenos un empleado para realizar esta accion.");
+
                     }
+
+                    break;
+
                 case 3:
 
-                    printEmployees(sEmployees, T);
+                    if(flagEmpleadoIngresado != 0){
 
-                    auxId = GetInt("\nIgrese el ID del empleado a eliminar: ", "\nEl ID debe contener solamente numeros: ");
+                        do{
 
-                    index = findEmployeeById(sEmployees , T , auxId );
+                            printf("\n\n-----------BAJA------------\n\n");
 
-                        if(index != -1){
-                            sEmployees[index].isEmpty = 1;
-                            printf("\nEmpleado eliminado. ");
-                        }else{
-                            printf("\nEmpleado no encontrado en la nomina. ");
+                            printEmployees(sEmployees, T);
+
+                            auxId = GetInt("\nIgrese el ID del empleado a eliminar: ", "\nEl ID debe contener solamente numeros: ");
+                            index = findEmployeeById(sEmployees , T , auxId );
+
+                            if(index != -1){
+
+                                conf = getConfirm("\nEsta seguro que desea eliminar al empleado? (Y/N) ");
+                                if(conf == 1){
+
+                                    sEmployees[index].isEmpty = 1;
+                                    printf("\nEmpleado eliminado. ");
+                                }
+                                else{
+                                    printf("\nOperacion cancela.\n");
+                                }
+
+                            }else{
+
+                                printf("\nEmpleado no encontrado en la nomina.");
+
+                            }
+
+                            conf = getConfirm("\nDesea buscar otro empleado? (Y/N):");
+
+                        }while(conf == 1);
+
+                    }else{
+
+                        printf("\nPrimero cargue al menos un empleado para realizar esta accion.");
+
+                    }
+
+                    break;
+
+                case 4:
+
+                    if(flagEmpleadoIngresado == 1){
+
+                        printf("\n\n------------INFORMAR------------\n\n");
+
+                        opCase4 = menu("\n1-Listar los empleados alfabeticamente por apellido y sector.\n2-Mostrar total y el promedio de los empleados y cuantos empleados superan el promedio.\n");
+
+                        switch(opCase4){
+
+                            case 1:
+
+                                order = menu("\n0-Ordenar empleados de mayor a menor \n1-Ordenar empleados de menor a mayor.");
+
+                                sortEmployees(sEmployees , T , order);
+
+                                printEmployees(sEmployees , T);
+
+                                break;
+
+                            case 2:
+                                //ACA HACER LO DEL PROMEDIO DE SALARIOS
+                                break;
+
+                            default:
+                                printf("\nError opcion no valida.\n");
+
 
                         }
+                    }else{
+
+                         printf("\nPrimero cargue al menos un empleado para realizar esta accion.");
+
+                    }
+
                     break;
-                case 4:
+
+
+                case 5:
+
                     break;
+
                 default:
                     printf("Error ingrese una  opcion valida");
             }
 
 
         }while( op != 5);
+
     }
     else
     {
+
         printf("\nERROR AL GENERAR LOS EMPLEADOS");
+
     }
+
     return 0;
 
 }

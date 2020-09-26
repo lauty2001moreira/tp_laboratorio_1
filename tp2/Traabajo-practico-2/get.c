@@ -19,26 +19,66 @@ void GetString(char *text, char *errorText, char *auxString){
 float GetFloat(char *text, char *errorText)
 {
 
-
     char num[10];
     float numero;
 
-    printf("%s",text);
-    scanf("%s",num);
+    do{
 
-    while(ValidarNumeroConComa(num) == 1){
-
-        printf("%s",errorText);
+        printf("%s",text);
         scanf("%s",num);
 
-    }
+        while(ValidarNumeroConComa(num) == 1){
 
-    numero = atof(num);
+            printf("%s",errorText);
+            scanf("%s",num);
+
+        }
+
+        numero = atof(num);
+
+    }while(numero < 0);
+
+    if(numero < 0){
+
+        printf("\n Error el numero no puede ser negativo.\n");
+
+    }
 
     return numero;
 }
 
 int GetInt(char *text, char *errorText)
+{
+
+    char num[10];
+    int numero;
+
+    do{
+
+        printf("%s",text);
+        scanf("%s",num);
+
+        while(ValidarNumero(num) == 1){
+
+            printf("%s",errorText);
+            scanf("%s",num);
+
+        }
+
+        numero = atoi(num);
+
+        if(numero < 0){
+            printf("\n Error el numero no puede ser negativo.\n");
+        }
+
+    }while(numero < 0);
+
+
+
+    return numero;
+}
+
+int GetNegativeInt(char *text, char *errorText)
 {
 
     char num[10];
@@ -55,6 +95,28 @@ int GetInt(char *text, char *errorText)
     }
 
     numero = atoi(num);
+
+
+    return numero;
+}
+
+float GetNegativeFloat(char *text, char *errorText)
+{
+
+    char num[10];
+    float numero;
+
+    printf("%s",text);
+    scanf("%s",num);
+
+    while(ValidarNumeroConComa(num) == 1){
+
+        printf("%s",errorText);
+        scanf("%s",num);
+
+    }
+
+    numero = atof(num);
 
     return numero;
 }

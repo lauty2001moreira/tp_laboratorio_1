@@ -1,32 +1,39 @@
 # depslib dependency file v1.0
-1600729140 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/main.c
+1601151630 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/main.c
 	"arrayEmployes.h"
+	"funciones.h"
 
-1600726256 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/arrayEmployes.h
+1601152243 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/arrayEmployes.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"get.h"
+	"funciones.h"
 	"validaciones.h"
 
-1600729195 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/get.c
+1601123322 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/get.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"validaciones.h"
 
-1600703047 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/validaciones.c
+1601072639 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 
-1600726362 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/arrayEmployes.c
+1601152274 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/arrayEmployes.c
 	"arrayEmployes.h"
+	"funciones.h"
 
 1600703177 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/validaciones.h
 
-1600711167 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/funciones.c
-	"get.h"
-	"validaciones.h"
+1601152118 source:/home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/funciones.c
 
 1600728443 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/get.h
+
+1601151959 /home/lautaro/Escritorio/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/tp2/Traabajo-practico-2/funciones.h
+	<stdio.h>
+	<string.h>
+	"get.h"
+	"validaciones.h"
 
