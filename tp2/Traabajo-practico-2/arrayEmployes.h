@@ -90,5 +90,58 @@ int printEmployees(Employee* list, int length);
 */
 int findEmptyPlace(Employee* list , int length);
 
+
+/** \brief find the first place in employee array
+*
+* \param list Employee*
+* \param length int
+* \param index int
+*
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+*
+*/
 int modifyEmployee(Employee* list , int length, int index);
 
+/** \brief number of employees in the list
+*
+* \param list Employee*
+* \param length int
+*
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - quantity of Employees
+*
+*/
+int countEmployee(Employee* list , int length);
+
+
+/** \brief find the average salary of the employees
+*
+* \param list Employee*
+* \param length int
+*
+* \return int Return (-1) if Error [Invalid length or NULL pointer] -average of salary
+*
+*/
+float averageSalary(Employee* list , int length);
+
+
+/** \brief number of employees exceeding salary
+*
+* \param list Employee*
+* \param length int
+*
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - number of employees exceeding salary
+*
+*/
+int aboveAverageEmployees(Employee* list , int length);
+
+
+
+/** \brief sum of salary
+*
+* \param list Employee*
+* \param length int
+*
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - sum employees salary
+*
+*/
+float salarySum(Employee* list , int length);

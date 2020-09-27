@@ -1,3 +1,4 @@
+#include "funciones.h"
 
 int menu(char *text){
 
@@ -21,5 +22,7 @@ int upperFirtsLetter(char* word){
     }
 
     word[0] = toupper(word[0]);
+
+    return 0;
 
 }

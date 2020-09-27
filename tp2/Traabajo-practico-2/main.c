@@ -2,7 +2,7 @@
 #include "funciones.h"
 #define FALSE 0
 
-#define T 5
+#define T 10
 
 int main()
 {
@@ -14,19 +14,16 @@ int main()
     int auxSector;
     int auxId;
     int conf;
-
     int order;
     int flagEmpleadoIngresado;
     int index;
+    float totalSumSalary;
+    float average;
 
-    Employee sEmployees[T]; //={ {1 , "Lautaro" , "moreira" , 15000 , 1 , FALSE},
-                 /*{2, "German","Gutierrez", 21000, 2 , FALSE},
-                 {3, "Franco","Rolando",32000,2, FALSE},
-                 {4, "Nicolas" , "Birriel" ,42000 , 2 ,FALSE},
-                 {5, "Octavio" , "Costa" , 20420, 1 , FALSE}};*/
-
+    Employee sEmployees[T];
 
     flagEmpleadoIngresado = 0 ;
+
 
     if(initEmployees(sEmployees, T) == 0){
 
@@ -125,6 +122,7 @@ int main()
                             if(index != -1){
 
                                 conf = getConfirm("\nEsta seguro que desea eliminar al empleado? (Y/N) ");
+
                                 if(conf == 1){
 
                                     sEmployees[index].isEmpty = 1;
@@ -132,6 +130,7 @@ int main()
                                 }
                                 else{
                                     printf("\nOperacion cancela.\n");
+                                aboveAverageEmployees(sEmployees , T);
                                 }
 
                             }else{
@@ -173,12 +172,20 @@ int main()
                                 break;
 
                             case 2:
-                                //ACA HACER LO DEL PROMEDIO DE SALARIOS
+
+                                totalSumSalary = salarySum(sEmployees , T);
+                                printf("\nLa suma de salario es %.2f.", totalSumSalary);
+
+                                average = averageSalary(sEmployees , T);
+                                printf("\nEl promedio de salario es %.2f. ", average);
+
+
+//                                printf("\nEl total de empleados que superan el promedio es %d.", )1
+
                                 break;
 
                             default:
                                 printf("\nError opcion no valida.\n");
-
 
                         }
                     }else{
@@ -195,6 +202,7 @@ int main()
                     break;
 
                 default:
+
                     printf("Error ingrese una  opcion valida");
             }
 

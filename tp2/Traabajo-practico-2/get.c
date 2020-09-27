@@ -36,13 +36,16 @@ float GetFloat(char *text, char *errorText)
 
         numero = atof(num);
 
+        if(numero < 0)
+        {
+
+            printf("\n Error el numero no puede ser negativo.\n");
+
+        }
+
     }while(numero < 0);
 
-    if(numero < 0){
 
-        printf("\n Error el numero no puede ser negativo.\n");
-
-    }
 
     return numero;
 }

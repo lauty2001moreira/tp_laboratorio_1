@@ -194,14 +194,14 @@ int printEmployees(Employee * list, int length){
     if( list != NULL && list > 0  )
     {
 
-        printf("ID-----------NAME-----------LAST NAME-----------SALARY-----------SECTOR\n\n");
+        printf("----------------------EMPLEADOS----------------------\n\n");
 
 
         for(i = 0; i < length ; i++){
 
             if(list[i].isEmpty != TRUE){
 
-                printf("\n%5d%15s%15s%10.2f%5d\n",list[i].id,list[i].name,list[i].lastName,list[i].salary, list[i].sector);
+                printf("\n%5d%15s%15s%15.2f%5d\n",list[i].id,list[i].name,list[i].lastName,list[i].salary, list[i].sector);
 
             }
 
@@ -244,27 +244,74 @@ int modifyEmployee(Employee* list , int length, int index){
     float auxSalary;
     int conf;
     int  op;
+    int error;
 
-    if(index != -1){
+    error = -1;
 
-        do{
+    if( list != NULL && list > 0  )
+    {
+        error = 0;
 
-            op = menu("\nQue desea modificar?\n1-Nombre\n2-Apellido\n3-Salario\n4-Sector.\n5-Cancelar\n");
+        if(index != -1){
 
-            switch(op){
+            do{
 
-                case 1:
+                op = menu("\nQue desea modificar?\n1-Nombre\n2-Apellido\n3-Salario\n4-Sector.\n5-Cancelar\n");
 
-                    GetString("\nIngrese el nuevo nombre del empleado: ","\nPor favor el nombre solamente debe contener letras: " ,auxName);
+                switch(op){
 
-                    printf("\nEsta seguro que desea modificar el nombre de %s a %s? ", list[index].name , auxName);
+                    case 1:
 
-                    conf = getConfirm(" (Y/N). ");
+                        GetString("\nIngrese el nuevo nombre del empleado: ","\nPor favor el nombre solamente debe contener letras: " ,auxName);
 
-                    if( conf == 1){
+                        printf("\nEsta seguro que desea modificar el nombre de %s a %s? ", list[index].name , auxName);
 
-                        strcpy(list[index].name, auxName);
-                        printf("\nModificacion exitosa");
+                        conf = getConfirm(" (Y/N). ");
+
+                        if( conf == 1){
+
+                            strcpy(list[index].name, auxName);
+                            printf("\nModificacion exitosa");
+
+                            }else{
+
+                                printf("\nOperacion cancelada.");
+
+                            }
+
+                        break;
+                    case 2:
+
+                        GetString("\nIngrese el apellido del empleado: ","\nPor favor el apellido solamente debe contener letras: ",auxLastName);
+
+                        printf("\nEsta seguro que desea modificar el apellido de %s a %s? ", list[index].lastName , auxLastName);
+
+                        conf = getConfirm(" (Y/N). ");
+
+                        if( conf == 1){
+
+                            strcpy(list[index].lastName, auxLastName);
+                            printf("\nModificacion exitosa");
+
+                        }else{
+
+                            printf("\nOperacion cancelada.");
+
+                        }
+                        break;
+
+                    case 3:
+
+                        auxSalary = GetFloat("\nIngrese el nuevo salario de la persona: ","\nEl salario debe estar en numeros , Reingrese el salario: ");
+
+                        printf("\nEsta seguro que desea modificar el salario del empleado de %f a %f? ", list[index].salary , auxSalary);
+
+                        conf = getConfirm(" (Y/N) ");
+
+                        if( conf == 1){
+
+                            list[index].salary = auxSalary;
+                            printf("\nModificacion exitosa");
 
                         }else{
 
@@ -272,82 +319,141 @@ int modifyEmployee(Employee* list , int length, int index){
 
                         }
 
-                    break;
-                case 2:
+                        break;
 
-                    GetString("\nIngrese el apellido del empleado: ","\nPor favor el apellido solamente debe contener letras: ",auxLastName);
+                    case 4:
 
-                    printf("\nEsta seguro que desea modificar el apellido de %s a %s? ", list[index].lastName , auxLastName);
+                        auxSector = GetInt("\nIngrese el nuevo sector de la persona: ","\nEl sector debe estar en numeros, Reingrese el sector: ");
 
-                    conf = getConfirm(" (Y/N). ");
+                        printf("\nEsta seguro que desea modificar el sector del empleado de %d a %d? ", list[index].sector , auxSector);
 
-                    if( conf == 1){
+                        conf = getConfirm(" (Y/N) ");
 
-                        strcpy(list[index].lastName, auxLastName);
-                        printf("\nModificacion exitosa");
+                        if( conf == 1){
 
-                    }else{
+                            list[index].sector = auxSector;
+                            printf("\nModificacion exitosa");
 
-                        printf("\nOperacion cancelada.");
+                        }else{
 
-                    }
-                    break;
+                            printf("\nOperacion cancelada.");
 
-                case 3:
+                        }
+                        break;
 
-                    auxSalary = GetFloat("\nIngrese el nuevo salario de la persona: ","\nEl salario debe estar en numeros , Reingrese el salario: ");
+                    case 5:
 
-                    printf("\nEsta seguro que desea modificar el salario del empleado de %f a %f? ", list[index].salary , auxSalary);
+                        printf("operacion cancelada");
 
-                    conf = getConfirm(" (Y/N) ");
+                        break;
 
-                    if( conf == 1){
-
-                        list[index].salary = auxSalary;
-                        printf("\nModificacion exitosa");
-
-                    }else{
-
-                        printf("\nOperacion cancelada.");
-
+                    default:
+                        printf("opcion no valida");
                     }
 
-                    break;
-
-                case 4:
-
-                    auxSector = GetInt("\nIngrese el nuevo sector de la persona: ","\nEl sector debe estar en numeros, Reingrese el sector: ");
-
-                    printf("\nEsta seguro que desea modificar el sector del empleado de %d a %d? ", list[index].sector , auxSector);
-
-                    conf = getConfirm(" (Y/N) ");
-
-                    if( conf == 1){
-
-                        list[index].sector = auxSector;
-                        printf("\nModificacion exitosa");
-
-                    }else{
-
-                        printf("\nOperacion cancelada.");
-
-                    }
-                    break;
-
-                case 5:
-
-                    printf("operacion cancelada");
-
-                    break;
-
-                default:
-                    printf("opcion no valida");
-                }
-
-        }while(op != 5);
+            }while(op != 5);
+        }
     }
 
-    return 0;
+    return error;
 }
 
 
+int countEmployee(Employee* list , int length){
+
+    int i;
+    int count;
+
+    count = -1;
+
+    if( list != NULL && list > 0  )
+    {
+        count = 0;
+
+        for(i = 0 ; i < length ; i++){
+
+            if( list[i].isEmpty == FALSE)
+            {
+                count++;
+            }
+
+        }
+    }
+
+    return count;
+
+}
+
+float salarySum(Employee* list , int length)
+{
+    int i;
+    float sum;
+
+    sum = -1;
+
+    if( list != NULL && list > 0  )
+    {
+        sum = 0;
+
+        for(i = 0; i< length; i++){
+
+            if(list[i].isEmpty == FALSE){
+
+                sum += list[i].salary;
+
+            }
+        }
+    }
+
+    return sum;
+
+}
+
+float averageSalary(Employee* list , int length){
+
+    int cantEmployes;
+    float average;
+    float sum;
+    //int i;
+
+    average = -1;
+
+    if( list != NULL && list > 0  )
+    {
+
+        average = 0;
+
+        sum = salarySum(list , length);
+
+        cantEmployes = countEmployee(list , length);
+
+        average = sum/cantEmployes;
+    }
+
+    return average;
+}
+
+int aboveAverageEmployees(Employee* list , int length){
+
+    int average;
+    int i;
+    int count;
+
+    count  =-1;
+
+    if( list != NULL && list > 0  )
+    {
+        count = 0;
+        average = averageSalary(list , length);
+
+        for(i = 0; i < length; i++){
+
+            if(list[i].salary > average)
+            {
+                count++;
+            }
+
+        }
+    }
+    return count;
+}
