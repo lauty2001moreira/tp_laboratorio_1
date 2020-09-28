@@ -36,3 +36,14 @@ void GetString(char *, char *, char*);
  *
  */
 int getConfirm(char* text);
+
+
+/** \brief pide un numero entero
+ *
+ * \param char texto a mostrar.
+ * \param char texto a mostrar si hay error.
+ *
+ * \return devuelve el numero.
+ *
+ */
+int GetNumber(char *text, char *errorText);

@@ -16,6 +16,27 @@ void GetString(char *text, char *errorText, char *auxString){
 }
 
 
+int GetNumber(char *text, char *errorText)
+{
+
+    char num[10];
+    int numero;
+
+    printf("%s",text);
+    scanf("%s",num);
+
+    while(ValidarNumero(num) == 1){
+
+        printf("%s",errorText);
+        scanf("%s",num);
+
+    }
+
+    numero = atoi(num);
+
+    return numero;
+}
+
 float GetFloat(char *text, char *errorText)
 {
 

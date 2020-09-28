@@ -26,3 +26,13 @@ int upperFirtsLetter(char* word){
     return 0;
 
 }
+
+
+void pressAKeyAndClear(void){
+
+   printf("\n\nPresione una tecla para continuar: ");
+   __fpurge(stdin);
+   getc(stdin);
+   system("clear");
+
+}
