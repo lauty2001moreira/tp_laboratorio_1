@@ -191,8 +191,10 @@ int runProgram(void){
 
                             case 2:
 
+                                printEmployees(sEmployees , T);
+
                                 totalSumSalary = salarySum(sEmployees , T);
-                                printf("\nLa suma de salario es %.2f.", totalSumSalary);
+                                printf("\n\n\nLa suma de salario es %.2f.", totalSumSalary);
 
                                 average = averageSalary(sEmployees , T);
                                 printf("\nEl promedio de salario es %.2f. ", average);

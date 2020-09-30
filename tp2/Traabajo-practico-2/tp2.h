@@ -4,7 +4,7 @@
 
 #define T 1000
 
-/** \brief function calls the main.
+/** \brief function call the program in the main menu.
 *
 * \return void
 *

@@ -196,12 +196,13 @@ int printEmployees(Employee * list, int length){
 
         printf("----------------------EMPLEADOS----------------------\n\n");
 
+        printf("\n    ID          NAME     LAST NAME    SALARY    SECTOR\n\n");
 
         for(i = 0; i < length ; i++){
 
             if(list[i].isEmpty != TRUE){
 
-                printf("\n%5d%15s%15s%15.2f%5d\n",list[i].id,list[i].name,list[i].lastName,list[i].salary, list[i].sector);
+                printf("\n%5d%14s%14s%13.2f%5d\n",list[i].id,list[i].name,list[i].lastName,list[i].salary, list[i].sector);
 
             }
 
@@ -264,6 +265,8 @@ int modifyEmployee(Employee* list , int length, int index){
 
                         GetString("\nIngrese el nuevo nombre del empleado: ","\nPor favor el nombre solamente debe contener letras: " ,auxName);
 
+                        upperFirtsLetter(auxLastName);
+
                         printf("\nEsta seguro que desea modificar el nombre de %s a %s? ", list[index].name , auxName);
 
                         conf = getConfirm(" (Y/N). ");
@@ -283,6 +286,8 @@ int modifyEmployee(Employee* list , int length, int index){
                     case 2:
 
                         GetString("\nIngrese el apellido del empleado: ","\nPor favor el apellido solamente debe contener letras: ",auxLastName);
+
+                        upperFirtsLetter(auxLastName);
 
                         printf("\nEsta seguro que desea modificar el apellido de %s a %s? ", list[index].lastName , auxLastName);
 
