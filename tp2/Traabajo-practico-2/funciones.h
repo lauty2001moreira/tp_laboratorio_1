@@ -28,3 +28,24 @@ int upperFirtsLetter(char*);
 *
 */
 void pressAKeyAndClear(void);
+
+
+/** \brief sort a array of numbers in ascendant way
+*
+*   \param int* array to sort
+*
+* \return -1 if array is null or the length is < 0 - returns 0 if is all ok
+*
+*/
+int SorArray(int* , int);
+
+/** \brief sort a array of strings in ascendant way
+*
+*   \param char** array to sort
+*
+* \return -1 if array is null or the length is < 0 - returns 0 if is all ok
+*
+*/
+int SorArrayOfStrings(char** , int);
+
+

@@ -1,4 +1,63 @@
 #include "funciones.h"
+int SorArray(int* array, int len){
+
+    int i;
+    int j;
+    int aux;
+    int error;
+
+    error = -1;
+
+    if(!(array == NULL && array < 0)){
+
+        error = 0;
+
+        for( i = 0; i< (len - 1); i++){
+
+            for( j = ( i + 1 ) ; j < len ; j++)
+            {
+                aux  =  array[i];
+                array[i] =  array[j];
+                array[j] =  aux ;
+            }
+        }
+    }
+
+    return error;
+}
+
+
+int SorArrayOfStrings(char *array[] , int len){
+
+    int i;
+    int j;
+    char *aux;
+    int error;
+
+    error = -1;
+
+    if(!(array == NULL && array < 0)){
+
+        error = 0;
+
+        for( i = 0; i< (len - 1); i++){
+
+            for( j = ( i + 1 ) ; j < len ; j++)
+            {
+                if(strcmp(array[i] ,array[j]) < 0){
+
+                    aux  =  array[i];
+                    array[i] =  array[j];
+                    array[j] =  aux ;
+
+                }
+            }
+        }
+    }
+
+    return error;
+
+}
 
 int menu(char *text){
 
