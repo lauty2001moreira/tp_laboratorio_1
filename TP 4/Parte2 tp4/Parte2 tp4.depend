@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/Controller.c
+	"Controller.h"
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/Controller.h
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"parser.h"
+	"Employee.h"
+	"funciones.h"
+	"get.h"
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/LinkedList.h
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/parser.h
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/Employee.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"funciones.h"
+	"get.h"
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/funciones.h
+	<stdio_ext.h>
+	<ctype.h>
+	<string.h>
+	<stdlib.h>
+	"get.h"
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/get.h
+
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/Employee.c
+	"Employee.h"
+
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/funciones.c
+	"funciones.h"
+
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/get.c
+	<stdio_ext.h>
+	<stdlib.h>
+	"validaciones.h"
+	"funciones.h"
+
+1606250074 /home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/validaciones.h
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	<stdlib.h>
+
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"funciones.h"
+
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"funciones.h"
+	"get.h"
+
+1606250074 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"validaciones.h"
+
+1606519901 source:/home/lautaro/Desktop/universidad 3 cuatrimestre/programacion-laboratorio/tp_laboratorio_1/TP 4/Parte2 tp4/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
